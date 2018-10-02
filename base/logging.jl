@@ -157,23 +157,23 @@ key value pairs, use the normal splatting syntax, `@info "blah" kws...`.
 There are some keys which allow automatically generated log data to be
 overridden:
 
-  * `_module=mod` can be used to specify a different originating module from
+  * `_module::mod` can be used to specify a different originating module from
     the source location of the message.
-  * `_group=symbol` can be used to override the message group (this is
+  * `_group::symbol` can be used to override the message group (this is
     normally derived from the base name of the source file).
-  * `_id=symbol` can be used to override the automatically generated unique
+  * `_id::symbol` can be used to override the automatically generated unique
     message identifier.  This is useful if you need to very closely associate
     messages generated on different source lines.
-  * `_file=string` and `_line=integer` can be used to override the apparent
+  * `_file::string` and `_line::integer` can be used to override the apparent
     source location of a log message.
 
 There's also some key value pairs which have conventional meaning:
 
-  * `maxlog=integer` should be used as a hint to the backend that the message
+  * `maxlog::integer` should be used as a hint to the backend that the message
     should be displayed no more than `maxlog` times.
-  * `exception=ex` should be used to transport an exception with a log message,
+  * `exception::ex` should be used to transport an exception with a log message,
     often used with `@error`. An associated backtrace `bt` may be attached
-    using the tuple `exception=(ex,bt)`.
+    using the tuple `exception::(ex,bt)`.
 
 # Examples
 
